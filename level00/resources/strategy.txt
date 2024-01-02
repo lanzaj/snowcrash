@@ -1,0 +1,10 @@
+We watched the intra video of the project to see the readme of the project,
+which, for some reason, is not present is this version...
+
+We found the only file with rights for user flag00 in the file system
+using the command:  find / -user flag00 -readable 2>/dev/null
+
+This file, named "john", contained a string that looked very much like
+a Cesar coded password : cdiiddwpgswtgt
+
+We used dcode.fr and got the final flag ( <- 11)
