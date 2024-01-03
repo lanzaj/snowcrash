@@ -1,0 +1,6 @@
+- We did "ls" at the home folder of the level04
+- We saw a level04.pl perl script that belongs to flag04 user, and execuable as flag04
+
+- We saw that the script was a CGI script that could take 1 argument (x), so we decided to exploit that with a shell injection
+- We made a curl request on the script with the provided port, using the semi-colon url code (%3B) to execute echo, and then getflag as flag04 user:
+            curl "http://localhost:4747/level04.pl?x=%3Bgetflag"
