@@ -1,0 +1,23 @@
+- We did "ls" at the home folder of the flag02
+- We saw a level02.pcap file.
+- After searching what this file is we understood that it is a file of an API for capturing network traffic.
+- We downloaded it with the command : "scp -P 4243 level02@127.0.0.1://home/user/level02/level02.pcap ."
+- We used www.cloudshark.org to read the data using the follow the stream tool.
+- We got this text :
+
+..%..%..&..... ..#..'..$..&..... ..#..'..$.. .....#.....'........... .38400,38400....#.SodaCan:0....'..DISPLAY.SodaCan:0......xterm.........."........!........"..".....b........b.....B.
+..............................1.......!.."......"......!..........."........".."................
+.....................
+Linux 2.6.38-8-generic-pae (::ffff:10.1.1.2) (pts/10)
+
+..wwwbugs login: l.le.ev.ve.el.lX.X
+..
+Password: ft_wandr...NDRel.L0L
+.
+..
+Login incorrect
+wwwbugs login: 
+
+- We understood that the password was "ft_wandr...NDRel.L0L" but it didn't work.
+- After few trial and errors, we understood that the '.' was the key to delete.
+- So we ended up getting "ft_waNDReLOL"
