@@ -1,0 +1,8 @@
+- There was nothing on level05's home, so we tried to search for anything related to this user in the file system
+- We found a crontab file in /var/mail with a path to a script to execute as flag05 every 2 minutes
+- That script executes every script in folder /opt/openarenaserver and then removes them
+
+- We noticed that the scripts created were removed every 2 min, but no output was visible as level05 user
+- So we decided to send the output in a tmp file, using a redirection in a script located in the right folder
+            getflag > /tmp/flag05
+- 2 minutes later, the flag was visible in /tmp/flag05
