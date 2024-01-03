@@ -1,0 +1,6 @@
+- We did "ls" at the home folder of the level03
+- We saw a level03 binary file that belongs to flag03 user, and execuable as flag03
+
+- When running it with gdb, we saw that the program called system() function with the string "/usr/bin/env echo Exploit me"
+- We then realised that thanks to the /usr/bin/env part, we could make this line of code do anything we wanted as flag03 user
+- We created an alternative version of echo in tmp (where level03 has rights) which called execve on getflag and added /tmp in the PATH env variable

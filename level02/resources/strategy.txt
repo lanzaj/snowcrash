@@ -1,4 +1,4 @@
-- We did "ls" at the home folder of the flag02
+- We did "ls" at the home folder of the level02
 - We saw a level02.pcap file.
 - After searching what this file is we understood that it is a file of an API for capturing network traffic.
 - We downloaded it with the command : "scp -P 4243 level02@127.0.0.1://home/user/level02/level02.pcap ."
