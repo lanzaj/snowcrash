@@ -1,0 +1,4 @@
+/tmp/l06
+[x {${exec(getflag)}}]
+
+./level06 /tmp/l06
