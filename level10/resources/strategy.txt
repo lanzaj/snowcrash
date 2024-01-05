@@ -1,1 +1,10 @@
-while true;  do nc.traditional -l -p 6969 | grep -v '.*( )*.' ; done
+- Again , one executable file and one unreadable token
+- We noticed the executable's purpose was to send to a listening server the content of a file
+- The problem we had is that the access() check performed by the program could not be passed on the token file
+- So we decided to use a symlink again to trick the program, make it access a random file for which we had rights
+- Then, between the access() call and the open() call, we tried to modify the file pointed by our symlink
+- Because timing was difficult to achieve, we ended up creating a c program with 2 loops:
+    - one that kept launching instances of the level10 program
+    - one that kept switching the symlink's destination between our dummy file and the token
+-These 2 loops allowed for a data race which made us pass the access call and send the token to our server loop started with this command:
+    - while true;  do nc.traditional -l -p 6969 | grep -v '.*( )*.' ; done
