@@ -1,0 +1,10 @@
+- Similar to level 03, we saw a binary executable file executable with flag07 user privilege
+- We tried to analyse the program by using the disassemble mode of GDB and the command strings.
+- We noticed a few things:
+    - The program calls getenv and asprintf to get an env variable and format it before giving it to system()
+    - The string given as argument to system() is "/bin/echo %s", %s being the string formatted by asprintf, result of getenv
+    - Also, we noticed that the default output of the program was "level07", which correspond to 2 env variables: $USER and $LOGNAME
+    - When modifying the value of $LOGNAME, the program's output changes
+
+- All that was left to do is : export LOGNAME='`getflag`'
+- Run the program again
