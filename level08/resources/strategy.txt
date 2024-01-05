@@ -1,0 +1,6 @@
+- We have a binary executable and a token file which we couldn't read of course
+- We noticed through disassembler that the binary opens and reads a file with flag08 privilege
+- The only problem is that before opening the file, the program checks with strstr that argv[1] doesn't contain "token"
+- All that was left to do was create a symbolic link to this file, with a different name, to bypass the strstr test and get the token's content :
+    ln -s /home/user/level08/token /tmp/flaghere
+- Then it was possible to execute ./level08 /tmp/flaghere to get the content of the file !
