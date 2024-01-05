@@ -1,0 +1,4 @@
+- Again, we found a level09 executable binary and a token file which was readable this time
+- We tried to understand what level09 did and realized it applied a shift to every character in a given string (depending on the index)
+- We implemented the reverse version of this program by substracting the index to every character instead of adding it
+- We gave the token file to our program, which gave us the flag user's passwordxxxx 
