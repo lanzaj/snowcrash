@@ -1,0 +1,8 @@
+- This level is quite similar to something we've already done
+- We have a lua script that takes a password string, hashes it and does other stuff which are not important to us
+- The script is listening on port 5151, so we reached it thanks to telnet and provided it a password:
+        telnet localhost 5151
+        Password: ;getflag > /tmp/11.txt
+- The provided password ended the echo command with the semi colon, and executed getflag in a file, so its output doesn't get piped to the hashing algo
+- All that's left to do is:
+        cat /tmp/11.txt
