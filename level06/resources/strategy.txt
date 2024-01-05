@@ -1,4 +1,9 @@
-/tmp/l06
-[x {${exec(getflag)}}]
+- There is a level06.php script and a level06 binary file inside the home folder of level06.
+- The php script contains a regex with a deprecated syntax /e:$a = preg_replace("/([x (.*)])/e", "y("\2")", $a);
+- This line replace any element contained inside "[x ...]" by the content of a file passed as a parameter.
+- Thanks of the /e, the text obtained will be interpreted as php code.
+- Using the syntax {${function()}}, we can execute a function inside the string.
+- So we create a file /tmp/l06 containing the following text to execute getflag :
+        [x {${exec(getflag)}}]
 
-./level06 /tmp/l06
+- We then  execute this line to get the flag:./level06 /tmp/l06
