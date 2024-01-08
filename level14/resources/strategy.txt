@@ -1,0 +1,7 @@
+- Seeing there was nothing of interest in the home folder, we decided to check on Slack if there were any clues
+- We saw messages advising us to check executables
+- After a few moments of research and thinking we realised that we had never checked what getflag actually decided
+- So we downloaded the executable with scp, gave it to dogbolt to make it more readable in C
+
+- We realised that it contained all the crypted flags, including the one from level 13, and the same ft_des hardcoded function
+- All we had to do was give the last crypted flag and give it to the copy program we made for level 13.
