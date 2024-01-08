@@ -6,5 +6,6 @@
 - Because timing was difficult to achieve, we ended up creating a c program with 2 loops:
     - one that kept launching instances of the level10 program
     - one that kept switching the symlink's destination between our dummy file and the token
+- Before launching the binary, we need to create the file "touch /tmp/toto; chmod 777 /tmp/toto"
 -These 2 loops allowed for a data race which made us pass the access call and send the token to our server loop started with this command:
     - while true;  do nc.traditional -l -p 6969 | grep -v '.*( )*.' ; done

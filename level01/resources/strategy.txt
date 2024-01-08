@@ -3,3 +3,4 @@ to every other user who had "x" instead (meaning the actual password is in /etc/
 
 We gave this hashed password to john the ripper, who cracked it in 0 seconds with the
 password hash "descrypt, traditional crypt(3) [DES 128/128 SSE2]", giving us the answer: abcdefg
+            command : /john --show test  (test being the file containing the hashed password)

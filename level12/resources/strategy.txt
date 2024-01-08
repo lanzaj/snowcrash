@@ -9,6 +9,8 @@
 
 - So, after a lot of trying and thinking, we realised that we could use the wildcard to avoid the capitalization of /tmp
 
+- (Don't forget to chmod 777 /tmp/MYSCRIPT)
+
 - The form of the request became : curl 'http://localhost:4646/level12.pl?x=`/*/MYSCRIPT`&y=toto'   (of course, y is totally useless)
 
 - After this, the output of the getflag could be read from /tmp/flag thanks to the execution of /tmp/MYSCRIPT

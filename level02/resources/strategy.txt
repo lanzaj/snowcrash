@@ -20,4 +20,4 @@ wwwbugs login:
 
 - We understood that the password was "ft_wandr...NDRel.L0L" but it didn't work.
 - After few trial and errors, we understood that the '.' was the key to delete.
-- So we ended up getting "ft_waNDReLOL"
+- So we ended up getting "ft_waNDReL0L"
