@@ -1,0 +1,4 @@
+- in the home folder of level13, there is a binary executable.
+- When disassembled with dogbolt (Ghidra), we see that it checks the uid before decoding a hardcoded string with a hardcoded function.
+- Our strategy was to compile the dogbolt code without the check on the uid. (see reverse.c)
+- When executing our own program, we get the password for level14.
