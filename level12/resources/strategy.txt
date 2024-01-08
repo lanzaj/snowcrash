@@ -1,0 +1,14 @@
+- In this level, we have a perl script that takes two arguments, x and y
+- This script makes some changes to x (capitalizing and removing everything after the first space)
+- Then it tries to grep in /tmp/xd lines that start in the same pattern as the modified x, splits them and prints "." or ".." depending on a comparison with y, but this part is not particularly relevant
+- Again, we can see a line where we can exploit the variable inserted in shell command between backticks
+
+- In this case, shell injection was more difficult since the x parameter we give to the script gets capitalized before being exploitable
+- That wouldn't be a problem if we had permissions to create files everywhere, but it becomes one since we can only use /tmp
+- Indeed, if we try to give "x=`/tmp/myscript`" to the perl script, it will be transformed into `/TMP/MYSCRIPT` before the exploitable line
+
+- So, after a lot of trying and thinking, we realised that we could use the wildcard to avoid the capitalization of /tmp
+
+- The form of the request became : curl 'http://localhost:4646/level12.pl?x=`/*/MYSCRIPT`&y=toto'   (of course, y is totally useless)
+
+- After this, the output of the getflag could be read from /tmp/flag thanks to the execution of /tmp/MYSCRIPT
